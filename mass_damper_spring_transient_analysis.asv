@@ -1,0 +1,9 @@
+% Create transfer function
+m = 5;
+k = 1;
+b = 3;
+
+s = tf(1, [m k b])
+
+% Plot step response
+[y, t] step(s)
