@@ -1,9 +1,15 @@
+% Analysis of the mass-damper-spring system with constants (m, k, b)
+
 % Create transfer function
 m = 5;
-k = -1;
+k = 1;
 b = 3;
 
 s = tf(1, [m k b])
+
+% Find natural frequency, damping ratio, poles, and period
+[wn, zeta, p] = damp(s)
+T = 2*pi/wn
 
 % Plot step response
 figure(1)
